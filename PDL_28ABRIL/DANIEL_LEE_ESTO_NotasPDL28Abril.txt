@@ -1,0 +1,64 @@
+CAMBIOS
+------------
+
+01. Estructura.c era una chorrada de codigo, lo incluias en el archivo .l con un include, 
+pues nada, lo he cortado y lo he pegado donde haces el include, he compilado y funciona identicamente.
+Asi que ahora no hace falta añadirlo en la sentencia de compilacion gcc
+
+02. Como SEMANTICOMARCOS.l es el archivo que el programa "flex" crea para hacer el lexico y el main, 
+y tampoco tiene sentido que lleve mi nombre; lo he llamado LEXICO.l, asi que ahora, al compilar se pone
+
+        flex LEXICO.l
+
+03. A semantico.h lo he llamado ahora:
+        
+        funciones_ayuda.h
+
+04. A SINTACTICOSEMANTICO.h como son todas las funciones de A(Typito )..G(Typito)..etc lo he llamado:
+
+        funciones_Typito.h
+
+05. Me estudié el programa lex, y ya he redirigido la entrada estandar a un fichero de primer argumento
+es decir:
+            antes : cat archivo_prueba | ./aplicacion
+            ahora : ./aplicacion archivo_prueba
+            en windows : aplicacion archivo_prueba
+
+06. En definitiva, ahora para compilarlo se hace asi (al menos en mi ordenador)
+
+        flex LEXICO.l
+        gcc -o aplicacion lex.yy.c ts2006.c -w
+
+07. El -w sirve para que no salgan los wargnings del ts2006. Y a mi ya no me hace falta
+poner -lfl o -flf porque lo arreglé con un comentario que dice alguien en el foro stackoverflow ese..
+
+08. Si quieres hacer un BASH compilador:
+
+    #!/bin/sh
+    flex LEXICO.l
+    gcc -o aplicacion lex.yy.c ts2006.c -w
+    printf "\n¡¡Programa compilado satisfactoriamente!!\n\n"
+    printf "\t+ Para usarlo escribe: aplicacion nombre_del_archivo_a_Tratar\n\n"
+
+es decir, escribes eso en un archivo, llamado por ejemplo compila
+y luego en terminal haces: 
+                                bash ./compila
+
+y ya te lo compila todo de golpe (esto no funciona en windows, porque no tiene bash)
+y ya luego: 
+
+            ./aplicacion archivo_prueba
+
+
+09. EN LA LINEA 975 de LEXICO.l te he "comentado" el codigo que da error, se trata de la parte
+en que escribes en un archivo el parse, hace (Base core) y no entiendo porqué. Porque los
+token.txt y tokenDraco.txt los escribe muy bien
+
+10. No te he tocado lo del tokenDraco.txt. Si quiers lo comentas tu, ya eso es cosa tuya.
+
+
+
+
+
+
+

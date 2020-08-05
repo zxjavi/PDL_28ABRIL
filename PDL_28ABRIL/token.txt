@@ -1,0 +1,7 @@
+<var,0>
+<int,->
+<identificador,0>
+<OpAsignacion,1>
+<constanteEntera,->
+<PuntoComa,->
+<eof,->

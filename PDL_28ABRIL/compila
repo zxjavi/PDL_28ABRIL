@@ -1,0 +1,6 @@
+#!/bin/sh
+flex LEXICO.l
+gcc -o aplicacion lex.yy.c ts2006.c -w
+printf "\n¡¡Programa compilado satisfactoriamente!!\n\n"
+printf "\t+ Para usarlo escribe: aplicacion nombre_del_archivo_a_Tratar\n\n"
+

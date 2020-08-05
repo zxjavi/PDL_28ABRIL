@@ -1,0 +1,10 @@
+function imprime (string s, string msg, int f)	/* función que recibe 3 argumentos */
+{
+	print (s); print (msg); print (f);
+	print ("\n");	// imprime un salto de línea */
+	/* finaliza la ejecución de la función (en este caso, se podría omitir) */
+}
+
+
+//mirar en h porque suma mal los dezplacamientos y por otra parte 
+//porq ue no va este ejemplo porque equipara mal los parametros de ///las funciones SIMPLE o V->IDENTIFICADOR
